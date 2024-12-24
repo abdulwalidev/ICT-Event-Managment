@@ -1,0 +1,317 @@
+/* App.css */
+
+/* Global Body Style */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark theme */
+  color: white;
+}
+
+/* Header Style */
+header {
+  background-color: #141414;
+  padding: 15px 30px; /* Increased padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .website-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding-left: 10px; /* Added padding to keep name from touching the left edge */
+}
+
+header .menu-buttons {
+  display: flex;
+  margin-top: 20px; 
+  gap: 20px; /* Adjusted space between buttons */
+}
+
+header .menu-buttons button {
+  padding: 12px 25px; /* Adjusted button padding for better size */
+  background-color: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px; /* Adjusted font size */
+  transition: background-color 0.3s ease; /* Added transition for smooth hover effect */
+}
+
+header .menu-buttons button:hover {
+  background-color: #f40612;
+}
+
+/* Home Page Styles */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 15px; /* Added padding to prevent elements from touching the edge */
+}
+
+.home-page .welcome-message {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+}
+
+/* Host Event Form */
+.host-event-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #333;
+  padding: 70px; /* Added extra padding for better spacing */
+  border-radius: 20px;
+  width: 100%;
+  max-width: 300px; /* Ensures form is not too wide on large screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form input{
+  width: 86%;
+  padding: 10px 20px; /* Adjusted input padding for consistency */
+  margin-bottom: 15px; /* Increased margin to avoid crowding */
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  font-size: 16px; /* Adjusted font size for better readability */ 
+}
+form textarea{
+  
+  width:86%;
+  padding: 10px 20px; /* Adjusted input padding for consistency */
+  margin-bottom: 15px; /* Increased margin to avoid crowding */
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  font-size: 16px; /* Adjusted font size for better readability */}
+form button {
+  width: 100%;
+  padding: 10px 20px; /* Adjusted input padding for consistency */
+  margin-bottom: 15px; /* Increased margin to avoid crowding */
+  border: 1px solid #666;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  font-size: 16px; /* Adjusted font size for better readability */
+}
+
+button {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px; /* Adjusted font size for button */
+  padding: 15px 25px; /* Increased button padding for better size */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+button:hover {
+  background-color: black;
+}
+
+/* Event Cards Style */
+.event-card {
+  background-color: #333;
+  padding: 25px; /* Added more padding inside card */
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 350px; /* Ensures cards don't get too wide */
+}
+
+.event-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.event-card p {
+  font-size: 16px;
+  color: #ccc; /* Lightened the text inside the card */
+}
+
+.event-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Makes cards wrap to the next row when needed */
+}
+
+/* Host New Event Card */
+.host-new-event-card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 350px; /* Ensures it doesn't get too wide */
+  margin: 15px;
+}
+
+.host-new-event-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.host-new-event-card p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 20px; /* Added bottom margin to separate description from buttons */
+}
+
+/* Space between buttons in host event */
+.host-new-event-card .action-buttons {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  gap: 10px; /* Added gap between buttons */
+}
+
+.host-new-event-card .action-buttons button {
+  padding: 12px 20px; /* Adjusted padding for buttons */
+  background-color: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Added smooth hover effect */
+}
+
+.host-new-event-card .action-buttons button:hover {
+  background-color: #f40612;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+  .home-page .welcome-message {
+    font-size: 28px; /* Reduced font size on smaller screens */
+  }
+
+  .form-container {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .menu-buttons button {
+    padding: 10px 20px; /* Reduced padding for buttons on small screens */
+  }
+
+  header .website-name {
+    font-size: 20px; /* Adjusted size of website name on mobile */
+  }
+  
+  .event-card {
+    width: 100%;
+    margin: 10px;
+    max-width: none; /* Ensures cards take full width on small screens */
+  }
+
+  .host-new-event-card {
+    max-width: 100%; /* Ensures host event card is responsive */
+    margin-bottom: 15px; /* Add space between cards on mobile */
+  }
+}
+.event-card-image{
+
+  max-width: 100%; /* Ensures host event card is responsive */
+    margin-bottom: 15px;
+}
+/* LoginPage.css */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #141414; /* Dark background like Netflix */
+  font-family: 'Arial', sans-serif;
+}
+
+.login-form {
+  background-color: #333; /* Darker form background */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form h2 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.login-form input {
+  width: 92%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #222;
+}
+
+.login-form input:focus {
+  border-color: #e50914; /* Netflix red */
+  outline: none;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #e50914; /* Netflix red */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #f40612; /* Darker red on hover */
+}
+
+.login-form .error-message {
+  color: #ff0000;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-form .link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-form .link a {
+  color: #e50914; /* Netflix red for the link */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-form .link a:hover {
+  text-decoration: underline;
+}
