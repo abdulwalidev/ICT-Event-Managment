@@ -1,0 +1,57 @@
+/* Header Styles */
+header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background for the header */
+  color: white;
+  padding: 20px 40px;
+  position: fixed; /* Fix header at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures header stays above content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+}
+
+/* Logo in the header */
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e50914; /* Netflix Red */
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Navigation links */
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #e50914; /* Netflix Red on hover */
+}
+
+/* Adjust the form container to account for fixed header */
+.event-form-page {
+  margin-top: 80px; /* Push content below the fixed header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}

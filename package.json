@@ -1,5 +1,5 @@
 {
-  "homepage": "https://abdulwalidev.github.io/ICT-Event-Managment",
+  "homepage": "https://abdulwalidev.github.io/Evvent-Manager",
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
@@ -16,7 +16,10 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-  "start": "react-scripts start",
+  "start": "react-scripts start"
+
+
+  ,
   "build": "react-scripts build",
   "test": "react-scripts test",
   "eject": "react-scripts eject"

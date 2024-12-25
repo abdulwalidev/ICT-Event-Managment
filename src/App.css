@@ -1,317 +1,486 @@
-/* App.css */
+/* Global Styles */
+/* Ensure Buttons Are Clickable */
+.button-container {
+  position: relative;
+  z-index: 10;  /* Ensure the buttons are above other elements */
+}
 
-/* Global Body Style */
-body {
+
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #121212; /* Dark theme */
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header Style */
-header {
-  background-color: #141414;
-  padding: 15px 30px; /* Increased padding for better spacing */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #141414; /* Dark background */
+  color: white;
+  line-height: 1.6;
 }
 
-header .website-name {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
+a {
   text-decoration: none;
-  padding-left: 10px; /* Added padding to keep name from touching the left edge */
-}
-
-header .menu-buttons {
-  display: flex;
-  margin-top: 20px; 
-  gap: 20px; /* Adjusted space between buttons */
-}
-
-header .menu-buttons button {
-  padding: 12px 25px; /* Adjusted button padding for better size */
-  background-color: #e50914;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px; /* Adjusted font size */
-  transition: background-color 0.3s ease; /* Added transition for smooth hover effect */
-}
-
-header .menu-buttons button:hover {
-  background-color: #f40612;
-}
-
-/* Home Page Styles */
-.home-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 0 15px; /* Added padding to prevent elements from touching the edge */
-}
-
-.home-page .welcome-message {
-  font-size: 36px;
-  color: white;
-  text-align: center;
-}
-
-/* Host Event Form */
-.host-event-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.form-container {
-  background-color: #333;
-  padding: 70px; /* Added extra padding for better spacing */
-  border-radius: 20px;
-  width: 100%;
-  max-width: 300px; /* Ensures form is not too wide on large screens */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-form input{
-  width: 86%;
-  padding: 10px 20px; /* Adjusted input padding for consistency */
-  margin-bottom: 15px; /* Increased margin to avoid crowding */
-  border: 1px solid #666;
-  border-radius: 5px;
-  background-color: #444;
-  color: white;
-  font-size: 16px; /* Adjusted font size for better readability */ 
-}
-form textarea{
-  
-  width:86%;
-  padding: 10px 20px; /* Adjusted input padding for consistency */
-  margin-bottom: 15px; /* Increased margin to avoid crowding */
-  border: 1px solid #666;
-  border-radius: 5px;
-  background-color: #444;
-  color: white;
-  font-size: 16px; /* Adjusted font size for better readability */}
-form button {
-  width: 100%;
-  padding: 10px 20px; /* Adjusted input padding for consistency */
-  margin-bottom: 15px; /* Increased margin to avoid crowding */
-  border: 1px solid #666;
-  border-radius: 5px;
-  background-color: #444;
-  color: white;
-  font-size: 16px; /* Adjusted font size for better readability */
+  color: inherit;
 }
 
 button {
-  background-color: #e50914;
-  border: none;
-  color: white;
   cursor: pointer;
-  font-size: 18px; /* Adjusted font size for button */
-  padding: 15px 25px; /* Increased button padding for better size */
-  transition: background-color 0.3s ease; /* Smooth hover transition */
-}
-
-button:hover {
-  background-color: black;
-}
-
-/* Event Cards Style */
-.event-card {
-  background-color: #333;
-  padding: 25px; /* Added more padding inside card */
-  margin: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 350px; /* Ensures cards don't get too wide */
-}
-
-.event-card h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.event-card p {
-  font-size: 16px;
-  color: #ccc; /* Lightened the text inside the card */
-}
-
-.event-cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Makes cards wrap to the next row when needed */
-}
-
-/* Host New Event Card */
-.host-new-event-card {
-  background-color: #333;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 350px; /* Ensures it doesn't get too wide */
-  margin: 15px;
-}
-
-.host-new-event-card h3 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.host-new-event-card p {
-  font-size: 16px;
-  color: #ccc;
-  margin-bottom: 20px; /* Added bottom margin to separate description from buttons */
-}
-
-/* Space between buttons in host event */
-.host-new-event-card .action-buttons {
-  display: flex;
-  justify-content: space-between; /* Space between buttons */
-  gap: 10px; /* Added gap between buttons */
-}
-
-.host-new-event-card .action-buttons button {
-  padding: 12px 20px; /* Adjusted padding for buttons */
-  background-color: #e50914;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: background-color 0.3s ease; /* Added smooth hover effect */
-}
-
-.host-new-event-card .action-buttons button:hover {
-  background-color: #f40612;
-}
-
-/* Responsive Design for Smaller Devices */
-@media (max-width: 768px) {
-  .home-page .welcome-message {
-    font-size: 28px; /* Reduced font size on smaller screens */
-  }
-
-  .form-container {
-    max-width: 90%;
-    padding: 20px;
-  }
-
-  .menu-buttons button {
-    padding: 10px 20px; /* Reduced padding for buttons on small screens */
-  }
-
-  header .website-name {
-    font-size: 20px; /* Adjusted size of website name on mobile */
-  }
-  
-  .event-card {
-    width: 100%;
-    margin: 10px;
-    max-width: none; /* Ensures cards take full width on small screens */
-  }
-
-  .host-new-event-card {
-    max-width: 100%; /* Ensures host event card is responsive */
-    margin-bottom: 15px; /* Add space between cards on mobile */
-  }
-}
-.event-card-image{
-
-  max-width: 100%; /* Ensures host event card is responsive */
-    margin-bottom: 15px;
-}
-/* LoginPage.css */
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #141414; /* Dark background like Netflix */
-  font-family: 'Arial', sans-serif;
-}
-
-.login-form {
-  background-color: #333; /* Darker form background */
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  width: 100%;
-  max-width: 400px;
-}
-
-.login-form header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.login-form h2 {
-  color: #ffffff;
-  font-size: 28px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.login-form input {
-  width: 92%;
-  padding: 15px;
-  margin: 10px 0;
-  border: 1px solid #555;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #222;
-}
-
-.login-form input:focus {
-  border-color: #e50914; /* Netflix red */
-  outline: none;
-}
-
-.login-form button {
-  width: 100%;
-  padding: 15px;
   background-color: #e50914; /* Netflix red */
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
   font-size: 16px;
-  cursor: pointer;
+  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
-.login-form button:hover {
-  background-color: #f40612; /* Darker red on hover */
+button:hover {
+  background-color: #f40612; /* Darker red for hover effect */
 }
 
-.login-form .error-message {
-  color: #ff0000;
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #e50914;
+}
+
+/* Header Styles */
+header {
+  background-color: #141414; /* Dark background */
+  padding: 20px 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header .website-name {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;  /* Remove default underline from link */
+}
+
+header .website-name:hover {
+  color: #e50914; /* Red color for hover effect */
+}
+
+header .menu-buttons button {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+header .menu-buttons button:hover {
+  background-color: #f40612; /* Darker red for hover effect */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #141414;
+  color: #757575;
   text-align: center;
+  padding: 20px 40px;
+  margin-top: 50px;
+}
+
+footer p {
   font-size: 14px;
-  margin-top: 10px;
 }
 
-.login-form .link {
+/* Login and Signup Pages */
+.login-page,
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://assets.nflxext.com/ffe/siteui/vlv3/b0cf6723-80b5-4c96-b49e-7e054ff3c4b4.jpg') center/cover;
+}
+
+form {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
+}
+
+form h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+form .error-message {
+  color: #e50914;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+form .link {
   margin-top: 20px;
 }
 
-.login-form .link a {
-  color: #e50914; /* Netflix red for the link */
-  text-decoration: none;
+form .link a {
+  color: #e50914;
   font-size: 14px;
 }
 
-.login-form .link a:hover {
+form .link a:hover {
   text-decoration: underline;
+}
+
+/* Host Event Page */
+.host-new-event-card {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+}
+
+.host-new-event-card h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.host-new-event-card button {
+  font-size: 18px;
+  padding: 12px 25px;
+  border-radius: 4px;
+  background-color: #e50914;
+}
+
+.host-new-event-card button:hover {
+  background-color: #f40612;
+}
+
+/* Event Form Page */
+.event-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #141414;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.event-form-container h3 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.event-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-form-container form input,
+.event-form-container form textarea {
+  margin-bottom: 15px;
+}
+
+.event-form-container form button {
+  font-size: 18px;
+  padding: 12px 25px;
+  background-color: #e50914;
+}
+
+.event-form-container form button:hover {
+  background-color: #f40612;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
+
+  header .website-name {
+    font-size: 20px;
+  }
+
+  .login-page,
+  .signup-page {
+    padding: 20px;
+    background-position: center top;
+  }
+
+  .host-new-event-card {
+    margin-top: 30px;
+    padding: 15px;
+  }
+
+  .event-form-container {
+    padding: 15px;
+  }
+
+}
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Home Page */
+.home-page {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://your-image-link-here.jpg'); /* Set a background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 30px; /* Increased space from the top */
+  opacity: 0; /* Set initial opacity for animation */
+  transform: translateY(30px); /* Initial position for animation */
+  animation: fadeInUp 1s ease-out forwards 1s; /* Apply scroll animation with 1s delay */
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 30px; /* Added space between paragraph and buttons */
+  color: #ddd; /* Light color for better readability */
+  line-height: 1.5;
+  opacity: 0; /* Set initial opacity for animation */
+  transform: translateY(30px); /* Initial position for animation */
+  animation: fadeInUp 1s ease-out forwards 2s; /* Apply scroll animation with 2s delay */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  opacity: 0; /* Set initial opacity for animation */
+  transform: translateY(30px); /* Initial position for animation */
+  animation: fadeInUp 1s ease-out forwards 3s; /* Apply scroll animation with 3s delay */
+}
+
+.button-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px; /* Move everything down */
+}
+
+/* Button Styles */
+.home-button {
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform and background-color transition */
+  animation: buttonFadeIn 0.5s ease-out 1s; /* Fade-in animation for the buttons */
+}
+
+/* Button Hover Animation */
+.home-button:hover {
+  background-color: red; /* Red background color on hover */
+  transform: scale(1.1); /* Enlarges the button on hover */
+}
+
+/* Button Focus Animation */
+.home-button:focus {
+  outline: none;
+}
+
+/* Image Styles */
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0; /* Set initial opacity for animation */
+  transform: translateY(30px); /* Initial position for animation */
+  animation: fadeInUp 1s ease-out forwards 4s; /* Apply scroll animation with 4s delay */
+}
+
+.image-container img {
+  width: 100px; /* Adjust the size of the images */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transition for image hover effect */
+}
+
+/* Image Hover Animation */
+.image-container img:hover {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+/* Animation for Button */
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .home-button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .image-container img {
+    width: 80px; /* Adjust image size for smaller screens */
+    height: 80px;
+  }
+}
+
+/* General Page Styles */
+.browse-artists-page, .browse-locations-page, .explore-events-page {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Cards Styling */
+.artists-list, .locations-list, .events-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.artist-card, .location-card, .event-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+}
+
+.artist-card img, .location-card img, .event-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.artist-card h2, .location-card h2, .event-card h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Add hover effects */
+.artist-card:hover, .location-card:hover, .event-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+/* EventFormPage image upload styling */
+.image-upload {
+  margin: 20px 0;
+}
+
+.image-upload label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.image-upload input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.image-upload p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.event-image img {
+  margin-top: 20px;
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

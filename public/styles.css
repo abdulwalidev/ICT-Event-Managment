@@ -1,0 +1,83 @@
+/* styles.css */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: skyblue;
+    margin: 0;
+    padding: 0;
+    color: black;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  header {
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .website-name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu-buttons button {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu-buttons button:hover {
+    background-color: lightgray;
+  }
+  
+  footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .home-page, .login-page, .host-new-event-card, .form-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="time"], textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+  }
+  
+  button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: gray;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .link {
+    margin-top: 10px;
+  }
+  
+  .link a {
+    color: blue;
+  }
+  
