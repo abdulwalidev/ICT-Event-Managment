@@ -1,22 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import App from "./App";
-import HomePage from "./components/HomePage";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
-import HostEventPage from "./components/HostEventPage";
-import EventFormPage from "./components/EventFormPage";
+import React from 'react'; // Ensure React is imported
+import ReactDOM from 'react-dom/client'; // Correct import for React 18
+import App from './App'; // Import the App component
+import './index.css'; // Import the CSS file (make sure it's linked correctly)
 
-ReactDOM.render(
-  <Router>
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage />} />
-      <Route path="/host-event" element={<HostEventPage />} />
-      <Route path="/event-form" element={<EventFormPage />} />
-    </Routes>
-  </Router>,
-  document.getElementById("root")
+const rootElement = document.getElementById('root');
+
+// Create a root element and render the app using createRoot
+const root = ReactDOM.createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );

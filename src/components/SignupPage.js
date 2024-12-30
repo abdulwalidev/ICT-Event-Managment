@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link here
 import Header from "./Header";
-import Footer from "./Footer";
+
 
 function SignupPage() {
   const [errorMessage, setErrorMessage] = useState("");
@@ -26,9 +26,10 @@ function SignupPage() {
       <div className="login-page">
         <form className="login-form" onSubmit={handleSubmit}>
           <h2>Sign Up</h2>
-          <input type="text" name="username" placeholder="Username" />
+          
           <input type="email" name="email" placeholder="Email" />
           <input type="password" name="password" placeholder="Password" />
+          <input type="password" name="password" placeholder="Password" /> 
           <button type="submit">Sign Up</button>
           {errorMessage && <div className="error-message">{errorMessage}</div>}
           <div className="link">
@@ -36,7 +37,7 @@ function SignupPage() {
           </div>
         </form>
       </div>
-      <Footer />
+      
     </div>
   );
 }

@@ -1,32 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link
 
-function EventPage() {
-  // Sample data for an event
-  const eventDetails = {
-    title: "Summer Music Festival 2024",
-    date: "August 15, 2024",
-    location: "Central Park, New York",
-    description:
-      "Join us for a day of fun, music, and excitement at the Summer Music Festival 2024! Featuring top artists from around the world, food trucks, and interactive activities for all ages.",
-    image: "https://via.placeholder.com/800x400", // Replace with an actual image URL
-  };
-
+function EventPage({ events }) {
   return (
     <div className="event-page">
-      <h1 className="event-title">{eventDetails.title}</h1>
-      <img
-        className="event-image"
-        src={eventDetails.image}
-        alt={eventDetails.title}
-      />
-      <p className="event-date">
-        <strong>Date:</strong> {eventDetails.date}
-      </p>
-      <p className="event-location">
-        <strong>Location:</strong> {eventDetails.location}
-      </p>
-      <p className="event-description">{eventDetails.description}</p>
-      <button className="register-button">Register Now</button>
+      <h1 className="event-title">Current Events</h1>
+      <div className="event-list">
+        {events.map((event) => (
+          <Link to={`/event/${event.id}`} key={event.id} className="event-card-link">
+            <div className="event-card">
+              <img src={event.image} alt={event.title} className="event-image" />
+              <h2 className="event-name">{event.title}</h2>
+              <p className="event-date">{event.date}</p>
+              <p className="event-location">{event.location}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

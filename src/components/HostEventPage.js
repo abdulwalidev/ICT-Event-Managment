@@ -5,14 +5,17 @@ import Footer from "./Footer";
 function HostEventPage() {
   return (
     <div>
-      <Header />
+      <Header /><div>
+        <br /> <br /><br />
       <div className="host-new-event-card">
+        <br />
         <h3>Host a New Event</h3>
         <button onClick={() => window.location.href='/event-form'}>Create Event</button>
       </div>
       <Footer />
+      </div>
     </div>
-  );
+      );
 }
 
 export default HostEventPage;

@@ -1,22 +1,17 @@
 /* Global Styles */
-/* Ensure Buttons Are Clickable */
-.button-container {
-  position: relative;
-  z-index: 10;  /* Ensure the buttons are above other elements */
-}
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #141414; /* Dark background */
+  background-color: #141414;
   color: white;
   line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 a {
@@ -24,9 +19,10 @@ a {
   color: inherit;
 }
 
+/* Button Global Styles */
 button {
   cursor: pointer;
-  background-color: #e50914; /* Netflix red */
+  background-color: #e50914;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -36,9 +32,10 @@ button {
 }
 
 button:hover {
-  background-color: #f40612; /* Darker red for hover effect */
+  background-color: #f40612;
 }
 
+/* Form Input Styles */
 input,
 textarea {
   width: 100%;
@@ -59,7 +56,7 @@ textarea:focus {
 
 /* Header Styles */
 header {
-  background-color: #141414; /* Dark background */
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px 40px;
   color: white;
   display: flex;
@@ -72,24 +69,22 @@ header {
 }
 
 header .website-name {
-  font-size: 24px;
+  font-size: 29px;
   font-weight: bold;
+  font-family: fantasy;
   letter-spacing: 2px;
-  color: white;
-  text-decoration: none;  /* Remove default underline from link */
+  color: rgb(190, 159, 159);
+  font-style: oblique;
+  font-stretch: extra-condensed;
 }
 
 header .website-name:hover {
-  color: #e50914; /* Red color for hover effect */
+  color: #e50914;
 }
 
 header .menu-buttons button {
   margin-left: 15px;
   font-size: 16px;
-}
-
-header .menu-buttons button:hover {
-  background-color: #f40612; /* Darker red for hover effect */
 }
 
 /* Footer Styles */
@@ -112,104 +107,282 @@ footer p {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://assets.nflxext.com/ffe/siteui/vlv3/b0cf6723-80b5-4c96-b49e-7e054ff3c4b4.jpg') center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/b0cf6723-80b5-4c96-b49e-7e054ff3c4b4.jpg') center/cover;
+  padding: 20px;
 }
 
-form {
-  background-color: rgba(0, 0, 0, 0.85);
+.login-page form,
+.signup-page form {
+  background-color: rgba(51, 51, 51, 0.95);
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 400px;
   text-align: center;
+  border: 2px solid rgba(128, 128, 128, 0.2);
 }
 
-form h2 {
+.login-page form input,
+.signup-page form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #454545;
+  color: white;
+  font-size: 16px;
+}
+
+.login-page form h2,
+.signup-page form h2 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: white;
 }
 
-form .error-message {
+.login-page form button,
+.signup-page form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+}
+
+.login-page form .error-message,
+.signup-page form .error-message {
   color: #e50914;
   margin-top: 10px;
   font-size: 14px;
 }
 
-form .link {
+.login-page form .link,
+.signup-page form .link {
   margin-top: 20px;
 }
 
-form .link a {
+.login-page form .link a,
+.signup-page form .link a {
   color: #e50914;
   font-size: 14px;
 }
 
-form .link a:hover {
-  text-decoration: underline;
-}
-
-/* Host Event Page */
-.host-new-event-card {
+/* Home Page Styles */
+.home-page {
   text-align: center;
-  margin-top: 50px;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 8px;
+  padding-top: 50px;
 }
 
-.host-new-event-card h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.banner {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Changed from 70vh to 85vh to make the main page image bigger */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0px -100px 50px -50px rgba(0, 0, 0, 0.9);
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  z-index: 2;
+  color: white;
+  text-align: left;
+}
+
+.banner-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  max-width: 500px;
+}
+
+/* Event Styles */
+.event-page {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #141414;
+  padding-top: 100px;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  height: 3px; /* Changed from 400px to 350px to make cards shorter */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.event-name {
+  font-size: 1.5em;
+  margin-bottom: 10px;
   color: #fff;
 }
 
-.host-new-event-card button {
-  font-size: 18px;
-  padding: 12px 25px;
-  border-radius: 4px;
-  background-color: #e50914;
+.event-date,
+.event-location {
+  font-size: 1.2em;
+  color: #e5e5e5;
 }
 
-.host-new-event-card button:hover {
-  background-color: #f40612;
-}
-
-/* Event Form Page */
-.event-form-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #141414;
-  border-radius: 8px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-}
-
-.event-form-container h3 {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.event-form-container form {
+/* Event Grid Styles */
+.event-grid {
   display: flex;
-  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
-.event-form-container form input,
-.event-form-container form textarea {
+/* Event Detail Card */
+.event-detail-page {
+  background-color: #141414;
+  padding: 20px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.event-detail-image {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.event-detail-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #e50914;
+}
+
+.event-detail-description,
+.event-detail-date,
+.event-detail-location {
+  font-size: 1.2em;
   margin-bottom: 15px;
+  color: #e5e5e5;
 }
 
-.event-form-container form button {
+/* Host Event Card */
+.host-new-event-card {
+  background-color: #333;
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Sections */
+.event-sections {
+  margin: 50px 20px;
+  background-color: #141414;
+}
+
+/* Buy Tickets Page */
+.buy-tickets-page {
+  padding: 20px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.buy-tickets-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+/* Home Button Styles */
+.home-button {
+  padding: 15px 40px;
   font-size: 18px;
-  padding: 12px 25px;
-  background-color: #e50914;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: buttonFadeIn 0.5s ease-out 1s;
 }
 
-.event-form-container form button:hover {
-  background-color: #f40612;
+.home-button:hover {
+  background-color: #e50914;
+  transform: scale(1.1);
+}
+
+.button-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Animations */
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -225,165 +398,10 @@ form .link a:hover {
   .login-page,
   .signup-page {
     padding: 20px;
-    background-position: center top;
   }
 
-  .host-new-event-card {
-    margin-top: 30px;
-    padding: 15px;
-  }
-
-  .event-form-container {
-    padding: 15px;
-  }
-
-}
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Home Page */
-.home-page {
-  position: relative;
-  height: 100vh;
-  background-image: url('https://your-image-link-here.jpg'); /* Set a background image */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  overflow: hidden;
-  flex-direction: column; /* Stack items vertically */
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-h1 {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 30px; /* Increased space from the top */
-  opacity: 0; /* Set initial opacity for animation */
-  transform: translateY(30px); /* Initial position for animation */
-  animation: fadeInUp 1s ease-out forwards 1s; /* Apply scroll animation with 1s delay */
-}
-
-.description {
-  font-size: 1.2rem;
-  margin-bottom: 30px; /* Added space between paragraph and buttons */
-  color: #ddd; /* Light color for better readability */
-  line-height: 1.5;
-  opacity: 0; /* Set initial opacity for animation */
-  transform: translateY(30px); /* Initial position for animation */
-  animation: fadeInUp 1s ease-out forwards 2s; /* Apply scroll animation with 2s delay */
-}
-
-.button-container {
-  display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  opacity: 0; /* Set initial opacity for animation */
-  transform: translateY(30px); /* Initial position for animation */
-  animation: fadeInUp 1s ease-out forwards 3s; /* Apply scroll animation with 3s delay */
-}
-
-.button-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px; /* Move everything down */
-}
-
-/* Button Styles */
-.home-button {
-  padding: 15px 40px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform and background-color transition */
-  animation: buttonFadeIn 0.5s ease-out 1s; /* Fade-in animation for the buttons */
-}
-
-/* Button Hover Animation */
-.home-button:hover {
-  background-color: red; /* Red background color on hover */
-  transform: scale(1.1); /* Enlarges the button on hover */
-}
-
-/* Button Focus Animation */
-.home-button:focus {
-  outline: none;
-}
-
-/* Image Styles */
-.image-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  opacity: 0; /* Set initial opacity for animation */
-  transform: translateY(30px); /* Initial position for animation */
-  animation: fadeInUp 1s ease-out forwards 4s; /* Apply scroll animation with 4s delay */
-}
-
-.image-container img {
-  width: 100px; /* Adjust the size of the images */
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease; /* Smooth transition for image hover effect */
-}
-
-/* Image Hover Animation */
-.image-container img:hover {
-  transform: scale(1.1); /* Enlarge the image on hover */
-}
-
-/* Animation for Button */
-@keyframes buttonFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Scroll Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
+  .banner-content h2 {
+    font-size: 2rem;
   }
 
   .home-button {
@@ -391,96 +409,390 @@ h1 {
     font-size: 16px;
   }
 
-  .description {
-    font-size: 1rem;
-  }
-
-  .image-container img {
-    width: 80px; /* Adjust image size for smaller screens */
-    height: 80px;
+  .event-card {
+    width: 100%;
+    max-width: 300px;
   }
 }
+/* ... (previous CSS remains the same until event card styles) ... */
 
-/* General Page Styles */
-.browse-artists-page, .browse-locations-page, .explore-events-page {
+/* Enhanced Event Card Styles */
+.event-card {
+  background: linear-gradient(145deg, #383838, #2a2a2a);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  height: 350px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 
+              0 2px 8px rgba(229, 9, 20, 0.1);
+  transition: all 0.4s ease;
   text-align: center;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-/* Cards Styling */
-.artists-list, .locations-list, .events-list {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
-.artist-card, .location-card, .event-card {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  padding: 20px;
-  text-align: center;
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
+              0 5px 15px rgba(229, 9, 20, 0.2);
+  border-color: rgba(229, 9, 20, 0.5);
 }
 
-.artist-card img, .location-card img, .event-card img {
+.event-image {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.artist-card h2, .location-card h2, .event-card h2 {
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-/* Add hover effects */
-.artist-card:hover, .location-card:hover, .event-card:hover {
-  transform: scale(1.05);
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
-/* EventFormPage image upload styling */
-.image-upload {
-  margin: 20px 0;
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
 }
 
-.image-upload label {
+.event-name {
+  font-size: 1.5em;
+  margin-top: 9px;
+  margin-bottom: 12px;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.event-date,
+.event-location {
+  font-size: 1.1em;
+  color: #e5e5e5;
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+/* Enhanced Login/Signup Form Cards */
+.login-page form,
+.signup-page form {
+  background: linear-gradient(145deg, rgba(51, 51, 51, 0.95), rgba(41, 41, 41, 0.95));
+  padding: 45px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid rgba(229, 9, 20, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.login-page form input,
+.signup-page form input {
+  width: 100%;
+  padding: 15px;
+  margin: 12px 0;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background-color: rgba(69, 69, 69, 0.8);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.login-page form input:focus,
+.signup-page form input:focus {
+  border-color: #e50914;
+  background-color: rgba(79, 79, 79, 0.9);
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+}
+
+/* Enhanced Event Detail Card */
+.event-detail-page {
+  background-color: #141414;
+  padding: 30px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.event-detail-card {
+  background: linear-gradient(145deg, #383838, #2a2a2a);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 1000px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-detail-image {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.event-detail-image:hover {
+  transform: scale(1.02);
+}
+
+.event-detail-title {
+  font-size: 2.8em;
+  margin-bottom: 15px;
+  color: #e50914;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Host Event Card */
+.host-new-event-card {
+  background: linear-gradient(145deg, #383838, #2a2a2a);
+  text-align: center;
+  margin: 50px auto;
+  padding: 35px;
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Buy Tickets Form Card */
+.buy-tickets-form {
+  background: linear-gradient(145deg, #383838, #2a2a2a);
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.buy-tickets-form input,
+.buy-tickets-form select {
+  background-color: rgba(69, 69, 69, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  width: 100%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.buy-tickets-form input:focus,
+.buy-tickets-form select:focus {
+  border-color: #e50914;
+  background-color: rgba(79, 79, 79, 0.9);
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+}
+
+/* Enhanced Form Groups */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
   display: block;
-  font-size: 1rem;
   margin-bottom: 8px;
+  font-size: 1.1em;
+  color: #e5e5e5;
+  font-weight: 500;
 }
 
-.image-upload input[type="file"] {
+/* Button Enhancements */
+button {
+  cursor: pointer;
+  background: linear-gradient(145deg, #e50914, #cc0812);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #f40612, #dc0a15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+.event-form-pag {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: black ;
+  border-radius: 8px;
+}
+
+.event-form-page input,
+.event-form-page textarea {
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.event-form-page button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Ticket Page Styling */
+.ticket-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #141414; /* Netflix dark theme background */
+  color: #ffffff; /* White text */
+  font-family: 'Arial', sans-serif;
+}
+
+.ticket-container {
+  background-color: #1c1c1c; /* Slightly lighter dark for the ticket */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #e50914; /* Netflix red */
+  font-weight: bold;
+}
+
+.ticket-details {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  text-align: left;
+  font-size: 16px;
+}
+
+.ticket-details:last-child {
+  border-bottom: none;
+}
+
+.ticket-label {
+  font-weight: bold;
+  color: #b3b3b3;
+}
+
+.ticket-value {
+  margin-left: 5px;
+  color: #ffffff;
+}
+
+.qr-code {
+  margin-top: 20px;
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff; /* Placeholder for QR code */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 12px;
   border-radius: 4px;
 }
 
-.image-upload p {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 5px;
+.footer {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #b3b3b3;
+  text-align: center;
+}
+/* Netflix-inspired CSS */
+
+/* Netflix-inspired CSS */
+
+
+.event-form-page {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.event-image img {
-  margin-top: 20px;
-  max-width: 100%;
-  max-height: 300px;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.event-form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #e50914;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.event-input, .event-textarea, .event-file-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.event-input::placeholder, .event-textarea::placeholder {
+  color: #888;
+}
+
+.event-textarea {
+  height: 100px;
+  resize: none;
+}
+
+.event-file-input {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.event-submit-button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #e50914;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-submit-button:hover {
+  background-color: #f6121d;
+}
+
+/* Centering only the form */
+.event-form-page {
+  margin: auto;
 }
